@@ -32,7 +32,6 @@ const authenticateToken = (req, res, next) => {
 router.post('/', authenticateToken, (req, res) => {
     const { title, status } = req.body;
     const userId = req.user.id; // Get user ID from token
-    console.log(userId)
 
     if (!userId) {
         return res.status(403).json({ error: 'User ID not found in token' });
